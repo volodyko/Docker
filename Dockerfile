@@ -4,7 +4,7 @@ FROM debian
 RUN apt-get --quiet update --yes
 
 RUN echo deb http://http.debian.net/debian jessie-backports main >> /etc/apt/sources.list
-RUN apt-get update && apt-get --quiet install --yes ca-certificates-java
+RUN apt-get upgrade -t jessie-backports ca-certificates-java
 RUN apt-get update && apt-get --quiet install --yes openjdk-8-jre-headless
 RUN apt-get update && apt-get --quiet install --yes openjdk-8-jre
 RUN apt-get update && apt-get --quiet install --yes openjdk-8-jdk
